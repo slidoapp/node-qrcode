@@ -145,3 +145,57 @@ test('CanvasRenderer renderToDataURL to provided canvas', function (t) {
 
   t.end()
 })
+
+test('CanvasRenderer renderToBlob', function (t) {
+  // Mock document object
+  global.document = {
+    createElement: function (el) {
+      if (el === 'canvas') {
+        const canvas = createCanvas(200, 200)
+
+        // The `HTMLCanvas` element has a `toBlob()` method
+        // to export content as image bytes. The equivalent
+        // methos in `canvas` library is the `toBuffer()`.
+        canvas.toBlob = (cb, mimeType, config) => {
+          const buffer = canvas.toBuffer(mimeType, config)
+          const blob = new Blob([buffer], { type: mimeType })
+          cb(blob)
+        }
+
+        return canvas
+      }
+    }
+  }
+
+  t.plan(6)
+
+  const sampleQrData = QRCode.create('sample text', { version: 2 })
+  let imageBlob
+
+  t.doesNotThrow(function () { CanvasRenderer.renderToBlob((blob) => {}, sampleQrData) },
+    'Should not throw if canvas is not provided')
+
+  t.doesNotThrow(function () {
+    CanvasRenderer.renderToBlob((blob) => {
+      imageBlob = blob
+
+      t.type(imageBlob, 'Blob',
+        'Should return a Blob object')
+
+      t.equal(imageBlob.toString('base64'), '[object Blob]',
+        'Blob data cannot be converted to base64 econding')
+
+      t.equal(imageBlob.size % 4, 0,
+        'Should have a correct size')
+
+      t.equal(imageBlob.type, 'image/png',
+        'Should have a correct type value')
+    }, sampleQrData, {
+      margin: 10,
+      scale: 1,
+      type: 'image/png'
+    })
+  }, 'Should not throw with options param')
+
+  global.document = undefined
+})
