@@ -34,13 +34,13 @@
 Inside your project folder do:
 
 ```shell
-npm install --save qrcode
+npm install --save @slidoapp/qrcode
 ```
 
 or, install it globally to use `qrcode` from the command line to save qrcode images or generate ones you can view in your terminal.
 
 ```shell
-npm install -g qrcode
+npm install -g @slidoapp/qrcode
 ```
 
 ## Usage
