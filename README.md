@@ -1,10 +1,10 @@
 # node-qrcode
 > QR code/2d barcode generator.
 
-[![Travis](https://img.shields.io/travis/soldair/node-qrcode.svg?style=flat-square)](http://travis-ci.org/soldair/node-qrcode)
-[![npm](https://img.shields.io/npm/v/qrcode.svg?style=flat-square)](https://www.npmjs.com/package/qrcode)
-[![npm](https://img.shields.io/npm/dt/qrcode.svg?style=flat-square)](https://www.npmjs.com/package/qrcode)
-[![npm](https://img.shields.io/npm/l/qrcode.svg?style=flat-square)](https://github.com/soldair/node-qrcode/blob/master/license)
+![build status](https://img.shields.io/github/actions/workflow/status/slidoapp/node-qrcode/build.yml?style=flat-square)
+[![npm](https://img.shields.io/npm/v/%40slidoapp%2Fqrcode.svg?style=flat-square)](https://www.npmjs.com/package%40slidoapp%2Fqrcode)
+[![npm](https://img.shields.io/npm/dt/%40slidoapp%2Fqrcode.svg?style=flat-square)](https://www.npmjs.com/package/%40slidoapp%2Fqrcode)
+[![npm](https://img.shields.io/npm/l/%40slidoapp%2Fqrcode.svg?style=flat-square)](https://github.com/slidoapp/node-qrcode/blob/main/license)
 
 - [Highlights](#highlights)
 - [Installation](#installation)
