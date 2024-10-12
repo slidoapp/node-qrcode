@@ -196,9 +196,10 @@ QRCode.toDataURL('some text', { errorCorrectionLevel: 'H' }, function (err, url)
 Capacity depends on symbol version and error correction level. Also encoding modes may influence the amount of storable data.
 
 The QR Code versions range from version **1** to version **40**.  
-Each version has a different number of modules (black and white dots), which define the symbol's size.
-For version 1 they are `21x21`, for version 2 `25x25` e so on.
-Higher is the version, more are the storable data, and of course bigger will be the QR Code symbol.
+Each version has a different number of modules (black and white dots), which define size of the symbol.
+For version 1 symbol size is `21x21` modules, for version 2 `25x25` and so on up to `177x177` modules
+for the largest symbol size.
+The higher the version, the more data can be stored in the QR code and of course the bigger the symbol will be.
 
 The table below shows the maximum number of storable characters in each encoding mode and for each error correction level.
 
@@ -212,7 +213,7 @@ The table below shows the maximum number of storable characters in each encoding
 **Note:** Maximum characters number can be different when using [Mixed modes](#mixed-modes).
 
 QR Code version can be set through `options.version` property.  
-If no version is specified, the more suitable value will be used. Unless a specific version is required, this option is not needed.
+If no version is specified, the most suitable value will be used. Unless a specific version is required, this option is not needed.
 
 ```javascript
 QRCode.toDataURL('some text', { version: 2 }, function (err, url) {
@@ -222,7 +223,7 @@ QRCode.toDataURL('some text', { version: 2 }, function (err, url) {
 
 ## Encoding modes
 Modes can be used to encode a string in a more efficient way.  
-A mode may be more suitable than others depending on the string content.
+A mode may be more suitable than the others depending on the data content.
 A list of supported modes are shown in the table below:
 
 | Mode         | Characters                                                | Compression                               |
@@ -232,8 +233,8 @@ A list of supported modes are shown in the table below:
 | Kanji        | Characters from the Shift JIS system based on JIS X 0208  | 2 kanji are represented by 13 bits        |
 | Byte         | Characters from the ISO/IEC 8859-1 character set          | Each characters are represented by 8 bits |
 
-Choose the right mode may be tricky if the input text is unknown.  
-In these cases **Byte** mode is the best choice since all characters can be encoded with it. (See [Multibyte characters](#multibyte-characters))  
+Choosing the right mode may be tricky if the input text is unknown.  
+In these cases **Byte** mode is the best choice since all characters can be encoded with it (see [Multibyte characters](#multibyte-characters)).  
 However, if the QR Code reader supports mixed modes, using [Auto mode](#auto-mode) may produce better results.
 
 ### Mixed modes
