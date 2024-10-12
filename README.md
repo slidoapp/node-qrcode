@@ -764,7 +764,8 @@ https://github.com/soldair/node-qrcode/issues/45
 This lib is based on "QRCode for JavaScript" which Kazuhiko Arase thankfully MIT licensed.
 
 ## License
-[MIT](https://github.com/soldair/node-qrcode/blob/master/license)
 
-The word "QR Code" is registered trademark of:<br>
-DENSO WAVE INCORPORATED
+Source code is licensed under [MIT License](https://github.com/soldair/node-qrcode/blob/master/license).
+
+The word "QR Code" is registered trademark of [DENSO WAVE INCORPORATED](https://www.denso-wave.com)
+in Japan and other countries.
