@@ -761,7 +761,9 @@ https://github.com/soldair/node-qrcode/issues/45
 
 
 ## Credits
-This lib is based on "QRCode for JavaScript" which Kazuhiko Arase thankfully MIT licensed.
+
+The source code is based on the [QRCode for JavaScript](https://github.com/kazuhikoarase/qrcode-generator) by Kazuhiko Arase,
+licenced under [MIT License](https://github.com/kazuhikoarase/qrcode-generator/blob/master/LICENSE).
 
 ## License
 
