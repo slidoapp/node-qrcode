@@ -46,7 +46,7 @@ npm install -g @slidoapp/qrcode
 ## Usage
 ### CLI
 
-```
+```text
 Usage: qrcode [options] <input string>
 
 QR Code options:
@@ -77,7 +77,7 @@ If not specified, output type is guessed from file extension.<br>
 Recognized extensions are `png`, `svg` and `txt`.
 
 ### Browser
-`node-qrcode` can be used in browser through module bundlers like [Browserify](https://github.com/substack/node-browserify) and [Webpack](https://github.com/webpack/webpack) or by including the precompiled bundle present in `build/` folder.
+The `@slidoapp/qrcode` can be used in browser through module bundlers like [Browserify](https://github.com/substack/node-browserify) and [Webpack](https://github.com/webpack/webpack) or by including the precompiled bundle present in `build/` folder.
 
 #### Module bundlers
 ```html
@@ -92,7 +92,7 @@ Recognized extensions are `png`, `svg` and `txt`.
 
 ```javascript
 // index.js -> bundle.js
-var QRCode = require('qrcode')
+var QRCode = require('@slidoapp/qrcode')
 var canvas = document.getElementById('canvas')
 
 QRCode.toCanvas(canvas, 'sample text', function (error) {
@@ -119,10 +119,10 @@ If you install through `npm`, precompiled files will be available in `node_modul
 The precompiled bundle have support for [Internet Explorer 10+, Safari 5.1+, and all evergreen browsers](https://browserl.ist/?q=defaults%2C+IE+%3E%3D+10%2C+Safari+%3E%3D+5.1).
 
 ### NodeJS
-Require the module `qrcode`
+Require the module `@slidoapp/qrcode`
 
 ```javascript
-var QRCode = require('qrcode')
+var QRCode = require('@slidoapp/qrcode')
 
 QRCode.toDataURL('I am a pony!', function (err, url) {
   console.log(url)
@@ -131,7 +131,7 @@ QRCode.toDataURL('I am a pony!', function (err, url) {
 
 render a qrcode for the terminal
 ```js
-var QRCode = require('qrcode')
+var QRCode = require('@slidoapp/qrcode')
 
 QRCode.toString('I am a pony!',{type:'terminal'}, function (err, url) {
   console.log(url)
@@ -142,7 +142,7 @@ QRCode.toString('I am a pony!',{type:'terminal'}, function (err, url) {
 Promises and Async/Await can be used in place of callback function.
 
 ```javascript
-import QRCode from 'qrcode'
+import QRCode from '@slidoapp/qrcode'
 
 // With promises
 QRCode.toDataURL('I am a pony!')
@@ -262,7 +262,7 @@ In this way no segment optimizations will be applied under the hood.<br>
 Segments list can be passed as an array of object:
 
 ```javascript
-  var QRCode = require('qrcode')
+  var QRCode = require('@slidoapp/qrcode')
 
   var segs = [
     { data: 'ABCDEFG', mode: 'alphanumeric' },
@@ -286,8 +286,8 @@ An helper method is provided by the lib through an optional file that you can in
 **Note:** Support for Kanji mode is only needed if you want to benefit of the data compression, otherwise is still possible to encode kanji using Byte mode (See [Multibyte characters](#multibyte-characters)).
 
 ```javascript
-  var QRCode = require('qrcode')
-  var toSJIS = require('qrcode/helper/to-sjis')
+  var QRCode = require('@slidoapp/qrcode')
+  var toSJIS = require('@slidoapp/qrcode/helper/to-sjis')
 
   QRCode.toDataURL(kanjiString, { toSJISFunc: toSJIS }, function (err, url) {
     console.log(url)
@@ -316,7 +316,7 @@ QR Codes can hold arbitrary byte-based binary data. If you attempt to create a b
 ```javascript
 // Regular array example
 // WARNING: Element values will be clamped to 0-255 even if your data contains higher values.
-const QRCode = require('qrcode')
+const QRCode = require('@slidoapp/qrcode')
 QRCode.toFile(
   'foo.png',
   [{ data: [253,254,255], mode: 'byte' }],
@@ -327,7 +327,7 @@ QRCode.toFile(
 
 ```javascript
 // Uint8ClampedArray example
-const QRCode = require('qrcode')
+const QRCode = require('@slidoapp/qrcode')
 
 QRCode.toFile(
   'foo.png',
@@ -340,7 +340,7 @@ QRCode.toFile(
 ```javascript
 // Node Buffer example
 // WARNING: Element values will be clamped to 0-255 even if your data contains higher values.
-const QRCode = require('qrcode')
+const QRCode = require('@slidoapp/qrcode')
 
 QRCode.toFile(
   'foo.png',
