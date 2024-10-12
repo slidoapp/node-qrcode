@@ -1,3 +1,12 @@
+## 2.0.0-preview2
+
+The `@slidoapp/qrcode` package requires NodeJS 18 runtime.
+
+Fixed security vulnerabilities in the `yargs` production dependency.
+
+> `yargs`: `^15.3.1` uses `y18n`: `^4.0.0` that has `CVE-2020-7774`: [nvd.nist.gov/vuln/detail/CVE-2020-7774](https://nvd.nist.gov/vuln/detail/CVE-2020-7774)
+> This was fixed in `yargs`: `^17.2.1`.
+
 ## [1.3.3](https://github.com/soldair/node-qrcode/compare/v1.3.2...v1.3.3) (2019-01-16)
 
 fixing security vulnerabillities reported by users of snyk and `npm audit` major
