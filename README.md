@@ -73,7 +73,8 @@ Examples:
   qrcode -o out.png "some text"         Save as png image
   qrcode -d F00 -o out.png "some text"  Use red as foreground color
 ```
-If not specified, output type is guessed from file extension.<br>
+
+If not specified, output type is guessed from file extension.  
 Recognized extensions are `png`, `svg` and `txt`.
 
 ### Browser
@@ -167,7 +168,7 @@ const generateQR = async text => {
 Error correction capability allows to successfully scan a QR Code even if the symbol is dirty or damaged.
 Four levels are available to choose according to the operating environment.
 
-Higher levels offer a better error resistance but reduce the symbol's capacity.<br>
+Higher levels offer a better error resistance but reduce the symbol's capacity.  
 If the chances that the QR Code symbol may be corrupted are low (for example if it is showed through a monitor)
 is possible to safely use a low error level such as `Low` or `Medium`.
 
@@ -182,7 +183,7 @@ Possible levels are shown below:
 
 The percentage indicates the maximum amount of damaged surface after which the symbol becomes unreadable.
 
-Error level can be set through `options.errorCorrectionLevel` property.<br>
+Error level can be set through `options.errorCorrectionLevel` property.  
 If not specified, the default value is `M`.
 
 ```javascript
@@ -194,7 +195,7 @@ QRCode.toDataURL('some text', { errorCorrectionLevel: 'H' }, function (err, url)
 ## QR Code capacity
 Capacity depends on symbol version and error correction level. Also encoding modes may influence the amount of storable data.
 
-The QR Code versions range from version **1** to version **40**.<br>
+The QR Code versions range from version **1** to version **40**.  
 Each version has a different number of modules (black and white dots), which define the symbol's size.
 For version 1 they are `21x21`, for version 2 `25x25` e so on.
 Higher is the version, more are the storable data, and of course bigger will be the QR Code symbol.
@@ -210,7 +211,7 @@ The table below shows the maximum number of storable characters in each encoding
 
 **Note:** Maximum characters number can be different when using [Mixed modes](#mixed-modes).
 
-QR Code version can be set through `options.version` property.<br>
+QR Code version can be set through `options.version` property.  
 If no version is specified, the more suitable value will be used. Unless a specific version is required, this option is not needed.
 
 ```javascript
@@ -220,7 +221,7 @@ QRCode.toDataURL('some text', { version: 2 }, function (err, url) {
 ```
 
 ## Encoding modes
-Modes can be used to encode a string in a more efficient way.<br>
+Modes can be used to encode a string in a more efficient way.  
 A mode may be more suitable than others depending on the string content.
 A list of supported modes are shown in the table below:
 
@@ -231,18 +232,18 @@ A list of supported modes are shown in the table below:
 | Kanji        | Characters from the Shift JIS system based on JIS X 0208  | 2 kanji are represented by 13 bits        |
 | Byte         | Characters from the ISO/IEC 8859-1 character set          | Each characters are represented by 8 bits |
 
-Choose the right mode may be tricky if the input text is unknown.<br>
-In these cases **Byte** mode is the best choice since all characters can be encoded with it. (See [Multibyte characters](#multibyte-characters))<br>
+Choose the right mode may be tricky if the input text is unknown.  
+In these cases **Byte** mode is the best choice since all characters can be encoded with it. (See [Multibyte characters](#multibyte-characters))  
 However, if the QR Code reader supports mixed modes, using [Auto mode](#auto-mode) may produce better results.
 
 ### Mixed modes
-Mixed modes are also possible. A QR code can be generated from a series of segments having different encoding modes to optimize the data compression.<br>
+Mixed modes are also possible. A QR code can be generated from a series of segments having different encoding modes to optimize the data compression.  
 However, switching from a mode to another has a cost which may lead to a worst result if it's not taken into account.
 See [Manual mode](#manual-mode) for an example of how to specify segments with different encoding modes.
 
 ### Auto mode
-By **default**, automatic mode selection is used.<br>
-The input string is automatically splitted in various segments optimized to produce the shortest possible bitstream using mixed modes.<br>
+By **default**, automatic mode selection is used.  
+The input string is automatically splitted in various segments optimized to produce the shortest possible bitstream using mixed modes.  
 This is the preferred way to generate the QR Code.
 
 For example, the string **ABCDE12345678?A1A** will be splitted in 3 segments with the following modes:
@@ -253,12 +254,12 @@ For example, the string **ABCDE12345678?A1A** will be splitted in 3 segments wit
 | 12345678 | Numeric      |
 | ?A1A     | Byte         |
 
-Any other combinations of segments and modes will result in a longer bitstream.<br>
+Any other combinations of segments and modes will result in a longer bitstream.  
 If you need to keep the QR Code size small, this mode will produce the best results.
 
 ### Manual mode
 If auto mode doesn't work for you or you have specific needs, is also possible to manually specify each segment with the relative mode.
-In this way no segment optimizations will be applied under the hood.<br>
+In this way no segment optimizations will be applied under the hood.  
 Segments list can be passed as an array of object:
 
 ```javascript
@@ -275,8 +276,8 @@ Segments list can be passed as an array of object:
 ```
 
 ### Kanji mode
-With kanji mode is possible to encode characters from the Shift JIS system in an optimized way.<br>
-Unfortunately, there isn't a way to calculate a Shifted JIS values from, for example, a character encoded in UTF-8, for this reason a conversion table from the input characters to the SJIS values is needed.<br>
+With kanji mode is possible to encode characters from the Shift JIS system in an optimized way.  
+Unfortunately, there isn't a way to calculate a Shifted JIS values from, for example, a character encoded in UTF-8, for this reason a conversion table from the input characters to the SJIS values is needed.  
 This table is not included by default in the bundle to keep the size as small as possible.
 
 If your application requires kanji support, you will need to pass a function that will take care of converting the input characters to appropriate values.
@@ -402,11 +403,11 @@ Type: `Object`
 }
 ```
 
-<br>
+  
 
 #### `toCanvas(canvasElement, text, [options], [cb(error)])`
 #### `toCanvas(text, [options], [cb(error, canvas)])`
-Draws qr code symbol to canvas.<br>
+Draws qr code symbol to canvas.  
 If `canvasElement` is omitted a new canvas is returned.
 
 ##### `canvasElement`
@@ -437,11 +438,11 @@ QRCode.toCanvas('text', { errorCorrectionLevel: 'H' }, function (err, canvas) {
 })
 ```
 
-<br>
+  
 
 #### `toDataURL(text, [options], [cb(error, url)])`
 #### `toDataURL(canvasElement, text, [options], [cb(error, url)])`
-Returns a Data URI containing a representation of the QR Code image.<br>
+Returns a Data URI containing a representation of the QR Code image.  
 If provided, `canvasElement` will be used as canvas to generate the data URI.
 
 ##### `canvasElement`
@@ -456,14 +457,14 @@ Text to encode or a list of objects describing segments.
 
 ##### `options`
 - ###### `type`
-  Type: `String`<br>
+  Type: `String`  
   Default: `image/png`
 
-  Data URI format.<br>
-  Possible values are: `image/png`, `image/jpeg`, `image/webp`.<br>
+  Data URI format.  
+  Possible values are: `image/png`, `image/jpeg`, `image/webp`.  
 
 - ###### `rendererOpts.quality`
-  Type: `Number`<br>
+  Type: `Number`  
   Default: `0.92`
 
   A Number between `0` and `1` indicating image quality if the requested type is `image/jpeg` or `image/webp`.
@@ -495,11 +496,11 @@ QRCode.toDataURL('text', opts, function (err, url) {
   img.src = url
 })
 ```
-<br>
+  
 
 #### `toString(text, [options], [cb(error, string)])`
 
-Returns a string representation of the QR Code.<br>
+Returns a string representation of the QR Code.  
 
 
 ##### `text`
@@ -509,10 +510,10 @@ Text to encode or a list of objects describing segments.
 
 ##### `options`
 - ###### `type`
-  Type: `String`<br>
+  Type: `String`  
   Default: `utf8`
 
-  Output format.<br>
+  Output format.  
   Possible values are: `terminal`,`utf8`, and `svg`.
 
 See [Options](#options) for other settings.
@@ -530,14 +531,14 @@ QRCode.toString('http://www.google.com', function (err, string) {
 })
 ```
 
-<br>
+  
 
 
 ### Server API
 #### `create(text, [options])`
 See [create](#createtext-options).
 
-<br>
+  
 
 #### `toCanvas(canvas, text, [options], [cb(error)])`
 Draws qr code symbol to [node canvas](https://github.com/Automattic/node-canvas).
@@ -555,10 +556,10 @@ Type: `Function`
 
 Callback function called on finish.
 
-<br>
+  
 
 #### `toDataURL(text, [options], [cb(error, url)])`
-Returns a Data URI containing a representation of the QR Code image.<br>
+Returns a Data URI containing a representation of the QR Code image.  
 Only works with `image/png` type for now.
 
 ##### `text`
@@ -574,10 +575,10 @@ Type: `Function`
 
 Callback function called on finish.
 
-<br>
+  
 
 #### `toString(text, [options], [cb(error, string)])`
-Returns a string representation of the QR Code.<br>
+Returns a string representation of the QR Code.  
 If choosen output format is `svg` it will returns a string containing xml code.
 
 ##### `text`
@@ -587,10 +588,10 @@ Text to encode or a list of objects describing segments.
 
 ##### `options`
 - ###### `type`
-  Type: `String`<br>
+  Type: `String`  
   Default: `utf8`
 
-  Output format.<br>
+  Output format.  
   Possible values are: `utf8`, `svg`, `terminal`.
 
 See [Options](#options) for other settings.
@@ -608,11 +609,11 @@ QRCode.toString('http://www.google.com', function (err, string) {
 })
 ```
 
-<br>
+  
 
 #### `toFile(path, text, [options], [cb(error)])`
-Saves QR Code to image file.<br>
-If `options.type` is not specified, the format will be guessed from file extension.<br>
+Saves QR Code to image file.  
+If `options.type` is not specified, the format will be guessed from file extension.  
 Recognized extensions are `png`, `svg`, `txt`.
 
 ##### `path`
@@ -627,20 +628,20 @@ Text to encode or a list of objects describing segments.
 
 ##### `options`
 - ###### `type`
-  Type: `String`<br>
+  Type: `String`  
   Default: `png`
 
-  Output format.<br>
+  Output format.  
   Possible values are: `png`, `svg`, `utf8`.
 
 - ###### `rendererOpts.deflateLevel` **(png only)**
-  Type: `Number`<br>
+  Type: `Number`  
   Default: `9`
 
   Compression level for deflate.
 
 - ###### `rendererOpts.deflateStrategy` **(png only)**
-  Type: `Number`<br>
+  Type: `Number`  
   Default: `3`
 
   Compression strategy for deflate.
@@ -665,7 +666,7 @@ QRCode.toFile('path/to/filename.png', 'Some text', {
 })
 ```
 
-<br>
+  
 
 #### `toFileStream(stream, text, [options])`
 Writes QR Code image to stream. Only works with `png` format for now.
@@ -683,76 +684,76 @@ Text to encode or a list of objects describing segments.
 ##### `options`
 See [Options](#options).
 
-<br>
+  
 
 ### Options
 
 #### QR Code options
 ##### `version`
-  Type: `Number`<br>
+  Type: `Number`  
 
   QR Code version. If not specified the more suitable value will be calculated.
 
 ##### `errorCorrectionLevel`
-  Type: `String`<br>
+  Type: `String`  
   Default: `M`
 
-  Error correction level.<br>
+  Error correction level.  
   Possible values are `low, medium, quartile, high` or `L, M, Q, H`.
 
 ##### `maskPattern`
-  Type: `Number`<br>
+  Type: `Number`  
 
-  Mask pattern used to mask the symbol.<br>
-  Possible values are `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`.<br>
+  Mask pattern used to mask the symbol.  
+  Possible values are `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`.  
   If not specified the more suitable value will be calculated.
 
 ##### `toSJISFunc`
-  Type: `Function`<br>
+  Type: `Function`  
 
-  Helper function used internally to convert a kanji to its Shift JIS value.<br>
+  Helper function used internally to convert a kanji to its Shift JIS value.  
   Provide this function if you need support for Kanji mode.
 
 #### Renderers options
 ##### `margin`
-  Type: `Number`<br>
+  Type: `Number`  
   Default: `4`
 
   Define how much wide the quiet zone should be.
 
 ##### `scale`
-  Type: `Number`<br>
+  Type: `Number`  
   Default: `4`
 
   Scale factor. A value of `1` means 1px per modules (black dots).
 
 ##### `small`
-  Type: `Boolean`<br>
+  Type: `Boolean`  
   Default: `false`
 
   Relevant only for terminal renderer. Outputs smaller QR code.
 
 ##### `width`
-  Type: `Number`<br>
+  Type: `Number`  
 
-  Forces a specific width for the output image.<br>
-  If width is too small to contain the qr symbol, this option will be ignored.<br>
+  Forces a specific width for the output image.  
+  If width is too small to contain the qr symbol, this option will be ignored.  
   Takes precedence over `scale`.
 
 ##### `color.dark`
-Type: `String`<br>
+Type: `String`  
 Default: `#000000ff`
 
-Color of dark module. Value must be in hex format (RGBA).<br>
+Color of dark module. Value must be in hex format (RGBA).  
 Note: dark color should always be darker than `color.light`.
 
 ##### `color.light`
-Type: `String`<br>
+Type: `String`  
 Default: `#ffffffff`
 
-Color of light module. Value must be in hex format (RGBA).<br>
+Color of light module. Value must be in hex format (RGBA).  
 
-<br>
+  
 
 ## GS1 QR Codes
 There was a real good discussion here about them. but in short any qrcode generator will make gs1 compatible qrcodes, but what defines a gs1 qrcode is a header with metadata that describes your gs1 information.
