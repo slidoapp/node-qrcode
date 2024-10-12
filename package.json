@@ -1,6 +1,6 @@
 {
   "name": "@slidoapp/qrcode",
-  "description": "QRCode / 2d Barcode api with both server side and client side support using canvas",
+  "description": "Generate Quick Response (QR) codes using JavaScript in a browser, server side code, or using a command line tool.",
   "version": "2.0.0-preview",
   "author": "Ryan Day <soldair@gmail.com>",
   "contributors": [

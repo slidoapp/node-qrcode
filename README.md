@@ -1,5 +1,5 @@
 # node-qrcode
-> QR code/2d barcode generator.
+> Generate Quick Response (QR) codes using JavaScript in a browser, server side code, or using a command line tool.
 
 ![build status](https://img.shields.io/github/actions/workflow/status/slidoapp/node-qrcode/build.yml?style=flat-square)
 [![npm](https://img.shields.io/npm/v/%40slidoapp%2Fqrcode.svg?style=flat-square)](https://www.npmjs.com/package%40slidoapp%2Fqrcode)
