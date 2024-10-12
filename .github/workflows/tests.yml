@@ -1,16 +1,16 @@
-name: build
+name: tests
 
 on:
   push:
   pull_request:
 
 jobs:
-  build:
+  qrcode-cli:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node: [ 18 ]
+        node: [ 18, 20, 22 ]
       fail-fast: false
 
     steps:
@@ -30,21 +30,18 @@ jobs:
     - name: npm ci
       run: npm ci
 
-    - name: npm audit production
-      run: npm audit --omit=dev
+    - name: npm link
+      run: npm link
 
-    - name: npm run build
-      run: npm run build
+    - name: qrcode terminal output
+      run: qrcode "Lorem ipsum."
 
-    - name: npm test
-      run: npm test
-
-    - name: npm pack
-      run: npm pack
+    - name: qrcode PNG output
+      run: qrcode --output qrcode.png "Lorem ipsum."
 
     - name: upload artifact
       uses: actions/upload-artifact@v4
       with:
-          name: qrcode_nodejs_${{ matrix.node }}
-          path: '*.tgz'
+          name: qrcode-cli_tests_nodejs_${{ matrix.node }}
+          path: 'qrcode.png'
           compression-level: 0
