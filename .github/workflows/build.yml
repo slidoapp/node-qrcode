@@ -30,6 +30,9 @@ jobs:
     - name: npm ci
       run: npm ci
 
+    - name: npm audit production
+      run: npm audit --omit=dev
+
     - name: npm run build
       run: npm run build
 
