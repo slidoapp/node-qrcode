@@ -20,7 +20,7 @@ test('Reed-Solomon encoder', function (t) {
   t.ok(genPoly, 'Generator polynomial should be defined')
 
   enc.initialize(3)
-  t.notEqual(enc.genPoly, genPoly, 'Should reinitialize the generator polynomial')
+  t.not(enc.genPoly, genPoly, 'Should reinitialize the generator polynomial')
 
   enc = new RS(0)
   t.notOk(enc.genPoly, 'Should not create a generator polynomial if degree is 0')

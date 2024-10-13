@@ -70,7 +70,7 @@ test('Alignment pattern - Positions', function (t) {
     // For each coord value check if it's present in the expected coords table
     pos.forEach(function (position) {
       position.forEach(function (coord) {
-        t.notEqual(expectedPos.indexOf(coord), -1, 'Should return valid coord value')
+        t.not(expectedPos.indexOf(coord), -1, 'Should return valid coord value')
       })
     })
   }
