@@ -6,7 +6,7 @@ const toSJIS = require('helper/to-sjis')
 
 test('QRCode interface', function (t) {
   t.type(QRCode.create, 'function', 'Should have "create" function')
-  t.throw(function () { QRCode.create() }, 'Should throw if no data is provided')
+  t.throws(function () { QRCode.create() }, 'Should throw if no data is provided')
   t.doesNotThrow(function () { QRCode.create('1234567') }, 'Should not throw')
 
   let qr = QRCode.create('a123456A', {
@@ -20,7 +20,7 @@ test('QRCode interface', function (t) {
   const darkModule = qr.modules.get(qr.modules.size - 8, 8)
   t.ok(darkModule, 'Should have a dark module at coords [size-8][8]')
 
-  t.throw(function () {
+  t.throws(function () {
     qr = QRCode.create({})
   }, 'Should throw if invalid data is passed')
 
@@ -84,12 +84,12 @@ test('QRCode version', function (t) {
   t.equal(qr.version, 9, 'Should create qrcode with correct version')
   t.equal(qr.errorCorrectionLevel, ECLevel.M, 'Should set correct EC level')
 
-  t.throw(function () {
+  t.throws(function () {
     qr = QRCode.create(new Array(Version.getCapacity(2, ECLevel.H)).join('a'),
       { version: 1, errorCorrectionLevel: ECLevel.H })
   }, 'Should throw if data cannot be contained with chosen version')
 
-  t.throw(function () {
+  t.throws(function () {
     qr = QRCode.create(new Array(Version.getCapacity(40, ECLevel.H) + 2).join('a'),
       { version: 40, errorCorrectionLevel: ECLevel.H })
   }, 'Should throw if data cannot be contained in a qr code')

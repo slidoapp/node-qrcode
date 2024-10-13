@@ -48,7 +48,7 @@ test('CanvasRenderer render', function (t) {
 
   global.document = undefined
 
-  t.throw(function () { canvasEl = CanvasRenderer.render(sampleQrData) },
+  t.throws(function () { canvasEl = CanvasRenderer.render(sampleQrData) },
     'Should throw if canvas cannot be created')
 
   t.end()

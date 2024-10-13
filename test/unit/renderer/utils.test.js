@@ -49,10 +49,10 @@ test('Utils getOptions', function (t) {
     },
     'Should return correct colors value from numbers')
 
-  t.throw(function () { Utils.getOptions({ color: { dark: true } }) },
+  t.throws(function () { Utils.getOptions({ color: { dark: true } }) },
     'Should throw if color is not a string')
 
-  t.throw(function () { Utils.getOptions({ color: { dark: '#aa' } }) },
+  t.throws(function () { Utils.getOptions({ color: { dark: '#aa' } }) },
     'Should throw if color is not in a valid hex format')
 
   t.end()

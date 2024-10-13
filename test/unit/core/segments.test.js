@@ -186,7 +186,7 @@ test('Segments from array', function (t) {
   t.deepEqual(Segments.fromArray([{}]), [],
     'Should return an empty array')
 
-  t.throw(function () { Segments.fromArray([{ data: 'ABCDE', mode: 'numeric' }]) },
+  t.throws(function () { Segments.fromArray([{ data: 'ABCDE', mode: 'numeric' }]) },
     'Should throw if segment cannot be encoded with specified mode')
 
   t.deepEqual(

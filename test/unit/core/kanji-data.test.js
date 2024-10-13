@@ -24,7 +24,7 @@ test('Kanji Data', function (t) {
 
   kanjiData = new KanjiData('abc')
   bitBuffer = new BitBuffer()
-  t.throw(function () { kanjiData.write(bitBuffer) }, 'Should throw if data is invalid')
+  t.throws(function () { kanjiData.write(bitBuffer) }, 'Should throw if data is invalid')
 
   t.end()
 })
