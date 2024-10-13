@@ -7,7 +7,7 @@ const toSJIS = require('helper/to-sjis')
 test('QRCode interface', function (t) {
   t.type(QRCode.create, 'function', 'Should have "create" function')
   t.throw(function () { QRCode.create() }, 'Should throw if no data is provided')
-  t.notThrow(function () { QRCode.create('1234567') }, 'Should not throw')
+  t.doesNotThrow(function () { QRCode.create('1234567') }, 'Should not throw')
 
   let qr = QRCode.create('a123456A', {
     version: 1,
@@ -24,11 +24,11 @@ test('QRCode interface', function (t) {
     qr = QRCode.create({})
   }, 'Should throw if invalid data is passed')
 
-  t.notThrow(function () {
+  t.doesNotThrow(function () {
     qr = QRCode.create('AAAAA00000', { version: 5 })
   }, 'Should accept data as string')
 
-  t.notThrow(function () {
+  t.doesNotThrow(function () {
     qr = QRCode.create([
       { data: 'ABCDEFG', mode: 'alphanumeric' },
       { data: 'abcdefg' },
@@ -37,7 +37,7 @@ test('QRCode interface', function (t) {
     ], { toSJISFunc: toSJIS })
   }, 'Should accept data as array of objects')
 
-  t.notThrow(function () {
+  t.doesNotThrow(function () {
     qr = QRCode.create('AAAAA00000', { errorCorrectionLevel: 'quartile' })
     qr = QRCode.create('AAAAA00000', { errorCorrectionLevel: 'q' })
   }, 'Should accept errorCorrectionLevel as string')
@@ -56,14 +56,14 @@ test('QRCode error correction', function (t) {
 
   for (let l = 0; l < ecValues.length; l++) {
     for (let i = 0; i < ecValues[l].name.length; i++) {
-      t.notThrow(function () {
+      t.doesNotThrow(function () {
         qr = QRCode.create('ABCDEFG', { errorCorrectionLevel: ecValues[l].name[i] })
       }, 'Should accept errorCorrectionLevel value: ' + ecValues[l].name[i])
 
       t.deepEqual(qr.errorCorrectionLevel, ecValues[l].level,
         'Should have correct errorCorrectionLevel value')
 
-      t.notThrow(function () {
+      t.doesNotThrow(function () {
         qr = QRCode.create('ABCDEFG', { errorCorrectionLevel: ecValues[l].name[i].toUpperCase() })
       }, 'Should accept errorCorrectionLevel value: ' + ecValues[l].name[i].toUpperCase())
 
@@ -94,7 +94,7 @@ test('QRCode version', function (t) {
       { version: 40, errorCorrectionLevel: ECLevel.H })
   }, 'Should throw if data cannot be contained in a qr code')
 
-  t.notThrow(function () {
+  t.doesNotThrow(function () {
     qr = QRCode.create('abcdefg', { version: 'invalid' })
   }, 'Should use best version if the one provided is invalid')
 
