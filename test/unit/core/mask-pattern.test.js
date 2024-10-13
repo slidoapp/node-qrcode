@@ -109,7 +109,7 @@ test('Mask pattern - Apply mask', function (t) {
   for (let p = 0; p < patterns; p++) {
     const matrix = new BitMatrix(6)
     MaskPattern.applyMask(p, matrix)
-    t.deepEqual(matrix.data, new Uint8Array(expectedPatterns[p]), 'Should return correct pattern')
+    t.same(matrix.data, new Uint8Array(expectedPatterns[p]), 'Should return correct pattern')
   }
 
   const matrix = new BitMatrix(2)
@@ -119,7 +119,7 @@ test('Mask pattern - Apply mask', function (t) {
   matrix.set(1, 1, false, true)
   MaskPattern.applyMask(0, matrix)
 
-  t.deepEqual(matrix.data, new Uint8Array([false, false, false, false]), 'Should leave reserved bit unchanged')
+  t.same(matrix.data, new Uint8Array([false, false, false, false]), 'Should leave reserved bit unchanged')
 
   t.throws(function () { MaskPattern.applyMask(-1, new BitMatrix(1)) }, 'Should throw if pattern is invalid')
 

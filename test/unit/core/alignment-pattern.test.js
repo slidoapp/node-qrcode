@@ -55,7 +55,7 @@ test('Alignment pattern - Row/Col coords', function (t) {
 
   for (let i = 1; i <= 40; i++) {
     const pos = pattern.getRowColCoords(i)
-    t.deepEqual(pos, EXPECTED_POSITION_TABLE[i - 1], 'Should return correct coords')
+    t.same(pos, EXPECTED_POSITION_TABLE[i - 1], 'Should return correct coords')
   }
 })
 

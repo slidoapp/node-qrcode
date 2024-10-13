@@ -60,14 +60,14 @@ test('QRCode error correction', function (t) {
         qr = QRCode.create('ABCDEFG', { errorCorrectionLevel: ecValues[l].name[i] })
       }, 'Should accept errorCorrectionLevel value: ' + ecValues[l].name[i])
 
-      t.deepEqual(qr.errorCorrectionLevel, ecValues[l].level,
+      t.same(qr.errorCorrectionLevel, ecValues[l].level,
         'Should have correct errorCorrectionLevel value')
 
       t.doesNotThrow(function () {
         qr = QRCode.create('ABCDEFG', { errorCorrectionLevel: ecValues[l].name[i].toUpperCase() })
       }, 'Should accept errorCorrectionLevel value: ' + ecValues[l].name[i].toUpperCase())
 
-      t.deepEqual(qr.errorCorrectionLevel, ecValues[l].level,
+      t.same(qr.errorCorrectionLevel, ecValues[l].level,
         'Should have correct errorCorrectionLevel value')
     }
   }
