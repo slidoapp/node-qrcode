@@ -39,16 +39,16 @@ test('toString', function (t) {
 
   QRCode.toString('some text', function (err, str) {
     t.ok(!err, 'There should be no error')
-    t.equals(typeof str, 'string',
+    t.equal(typeof str, 'string',
       'Should return a string')
   })
 
-  t.equals(typeof QRCode.toString('some text').then, 'function',
+  t.equal(typeof QRCode.toString('some text').then, 'function',
     'Should return a promise')
 
   QRCode.toString('some text', { errorCorrectionLevel: 'L' })
     .then(function (str) {
-      t.equals(typeof str, 'string',
+      t.equal(typeof str, 'string',
         'Should return a string')
     })
 })
@@ -61,16 +61,16 @@ test('toString (browser)', function (t) {
 
   browser.toString('some text', function (err, str) {
     t.ok(!err, 'There should be no error (browser)')
-    t.equals(typeof str, 'string',
+    t.equal(typeof str, 'string',
       'Should return a string (browser)')
   })
 
-  t.equals(typeof browser.toString('some text').then, 'function',
+  t.equal(typeof browser.toString('some text').then, 'function',
     'Should return a promise')
 
   browser.toString('some text', { errorCorrectionLevel: 'L' })
     .then(function (str) {
-      t.equals(typeof str, 'string',
+      t.equal(typeof str, 'string',
         'Should return a string')
     })
 })

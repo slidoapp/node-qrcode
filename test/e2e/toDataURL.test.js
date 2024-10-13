@@ -65,7 +65,7 @@ test('toDataURL - image/png', function (t) {
     type: 'image/png'
   }, function (err, url) {
     t.ok(!err, 'there should be no error ' + err)
-    t.equals(url, expectedDataURL,
+    t.equal(url, expectedDataURL,
       'url should match expected value for error correction L')
   })
 
@@ -78,14 +78,14 @@ test('toDataURL - image/png', function (t) {
     t.notOk(url, 'url should be null')
   })
 
-  t.equals(typeof QRCode.toDataURL('i am a pony!').then, 'function',
+  t.equal(typeof QRCode.toDataURL('i am a pony!').then, 'function',
     'Should return a promise')
 
   QRCode.toDataURL('i am a pony!', {
     errorCorrectionLevel: 'L',
     type: 'image/png'
   }).then(function (url) {
-    t.equals(url, expectedDataURL,
+    t.equal(url, expectedDataURL,
       'url should match expected value for error correction L (promise)')
   })
 
@@ -132,7 +132,7 @@ test('Canvas toDataURL - image/png', function (t) {
     type: 'image/png'
   }, function (err, url) {
     t.ok(!err, 'there should be no error ' + err)
-    t.equals(url, expectedDataURL, 'url generated should match expected value')
+    t.equal(url, expectedDataURL, 'url generated should match expected value')
   })
 
   QRCodeBrowser.toDataURL(canvas, 'i am a pony!', {
@@ -148,7 +148,7 @@ test('Canvas toDataURL - image/png', function (t) {
     errorCorrectionLevel: 'H',
     type: 'image/png'
   }).then(function (url) {
-    t.equals(url, expectedDataURL, 'url generated should match expected value (promise)')
+    t.equal(url, expectedDataURL, 'url generated should match expected value (promise)')
   })
 
   QRCodeBrowser.toDataURL(canvas, 'i am a pony!', {
@@ -173,13 +173,13 @@ test('Canvas toDataURL - image/png', function (t) {
     type: 'image/png'
   }, function (err, url) {
     t.ok(!err, 'there should be no error ' + err)
-    t.equals(url, expectedDataURL, 'url generated should match expected value')
+    t.equal(url, expectedDataURL, 'url generated should match expected value')
   })
 
   QRCodeBrowser.toDataURL('i am a pony!', {
     errorCorrectionLevel: 'H',
     type: 'image/png'
   }).then(function (url) {
-    t.equals(url, expectedDataURL, 'url generated should match expected value (promise)')
+    t.equal(url, expectedDataURL, 'url generated should match expected value (promise)')
   })
 })
