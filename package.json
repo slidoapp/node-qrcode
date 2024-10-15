@@ -19,11 +19,13 @@
     "./lib/index.js": "./lib/browser.js",
     "fs": false
   },
+  "types": "./types/index.d.ts",
   "files": [
     "bin",
     "build",
     "lib",
-    "helper"
+    "helper",
+    "types"
   ],
   "homepage": "https://github.com/slidoapp/node-qrcode",
   "license": "MIT",
