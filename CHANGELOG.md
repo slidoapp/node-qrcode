@@ -1,3 +1,8 @@
+## 2.0.1
+
+Add TypeScript type definitions for the library.
+
+
 ## 2.0.0
 
 The `@slidoapp/qrcode` package requires NodeJS 18 runtime and supports NodeJS 18, 20 and 22.
