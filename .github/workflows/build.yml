@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-14
 
     strategy:
       matrix:
@@ -24,8 +24,7 @@ jobs:
 
     - name: install canvas dependencies
       run: |
-        sudo apt-get update
-        sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+        brew install --quiet pkg-config cairo pango libpng jpeg giflib librsvg pixman python-setuptools
 
     - name: npm ci
       run: npm ci
@@ -39,12 +38,32 @@ jobs:
     - name: npm test
       run: npm test
 
+    - name: npm run tap-junit-report
+      run: npm run tap-junit-report || true
+
+    - name: upload artifact
+      uses: actions/upload-artifact@v4
+      if: success() || failure()
+      with:
+          name: 'qrcode-tests-report-nodejs_${{ matrix.node }}'
+          path: 'test-results.xml'
+          compression-level: 0
+
+    - name: test report
+      uses: dorny/test-reporter@eaa763f6ffc21c7a37837f56cd5f9737f27fc6c8 # 1.8.0
+      if: success() || failure()
+      with:
+        name: 'qrcode-tests-nodejs_${{ matrix.node }}'
+        path: 'test-results.xml'
+        reporter: jest-junit
+
     - name: npm pack
+      if: always()
       run: npm pack
 
     - name: upload artifact
       uses: actions/upload-artifact@v4
       with:
-          name: qrcode_nodejs_${{ matrix.node }}
+          name: 'qrcode_nodejs_${{ matrix.node }}'
           path: '*.tgz'
           compression-level: 0
