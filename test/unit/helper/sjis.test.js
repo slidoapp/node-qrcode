@@ -1,5 +1,5 @@
 import { test } from 'tap'
-const toSJIS = require('helper/to-sjis')
+import { toSJIS } from './../../../helper/to-sjis.js'
 
 test('SJIS from char', function (t) {
   t.notOk(toSJIS(''),
