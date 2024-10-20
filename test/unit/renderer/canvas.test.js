@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const { Canvas, createCanvas } = require('canvas')
 const QRCode = require('core/qrcode')
 const CanvasRenderer = require('renderer/canvas')

@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const BitMatrix = require('core/bit-matrix')
 
 test('Bit Matrix', function (t) {

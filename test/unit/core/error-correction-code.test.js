@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const Utils = require('core/utils')
 const Version = require('core/version')
 const ECLevel = require('core/error-correction-level')

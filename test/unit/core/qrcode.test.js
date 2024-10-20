@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const ECLevel = require('core/error-correction-level')
 const Version = require('core/version')
 const QRCode = require('core/qrcode')

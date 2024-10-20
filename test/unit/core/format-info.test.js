@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const FormatInfo = require('core/format-info')
 const ECLevel = require('core/error-correction-level')
 const MaskPattern = require('core/mask-pattern')

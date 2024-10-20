@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const Mode = require('core/mode')
 
 test('Mode bits', function (t) {

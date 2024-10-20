@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const sinon = require('sinon')
 const fs = require('fs')
 const QRCode = require('core/qrcode')

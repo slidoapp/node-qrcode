@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const GF = require('core/galois-field')
 
 test('Galois Field', function (t) {

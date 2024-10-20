@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const Regex = require('core/regex')
 
 test('Regex', function (t) {

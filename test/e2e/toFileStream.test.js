@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const sinon = require('sinon')
 const QRCode = require('lib')
 const StreamMock = require('../mocks/writable-stream')
