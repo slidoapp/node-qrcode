@@ -91,7 +91,7 @@ const SJIS_UTF8 = [
   [0xea80, '黴黶黷黹黻黼黽鼇鼈皷鼕鼡鼬鼾齊齒齔齣齟齠齡齦齧齬齪齷齲齶龕龜龠堯槇遙瑤凜熙']
 ]
 
-module.exports = function toSJIS (utf8Char) {
+export function toSJIS (utf8Char) {
   if (!utf8Char || utf8Char === '') return
 
   for (let i = 0; i < SJIS_UTF8.length; i++) {
