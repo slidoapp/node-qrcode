@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const toSJIS = require('helper/to-sjis')
 
 test('SJIS from char', function (t) {

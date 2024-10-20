@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const QRCode = require('core/qrcode')
 const TerminalRenderer = require('renderer/terminal')
 

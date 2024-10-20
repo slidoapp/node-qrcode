@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const Mode = require('core/mode')
 const Segments = require('core/segments')
 const NumericData = require('core/numeric-data')

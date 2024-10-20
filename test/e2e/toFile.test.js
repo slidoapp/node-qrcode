@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const fs = require('fs')
 const path = require('path')
 const os = require('os')

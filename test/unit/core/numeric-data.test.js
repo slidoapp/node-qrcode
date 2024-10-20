@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const BitBuffer = require('core/bit-buffer')
 const NumericData = require('core/numeric-data')
 const Mode = require('core/mode')

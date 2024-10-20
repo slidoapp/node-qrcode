@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const ECLevel = require('core/error-correction-level')
 
 const EC_LEVELS = [ECLevel.L, ECLevel.M, ECLevel.Q, ECLevel.H]

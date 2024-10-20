@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const Poly = require('core/polynomial')
 
 test('Generator polynomial', function (t) {

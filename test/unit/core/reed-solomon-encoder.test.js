@@ -1,4 +1,4 @@
-const test = require('tap').test
+import { test } from 'tap'
 const RS = require('core/reed-solomon-encoder')
 
 test('Reed-Solomon encoder', function (t) {
