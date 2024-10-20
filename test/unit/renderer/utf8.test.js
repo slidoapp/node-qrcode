@@ -1,8 +1,8 @@
 import { test } from 'tap'
-const sinon = require('sinon')
-const fs = require('fs')
-const QRCode = require('core/qrcode')
-const Utf8Renderer = require('renderer/utf8')
+import sinon from 'sinon'
+import fs from 'fs'
+import * as QRCode from './../../../lib/core/qrcode.js'
+import * as Utf8Renderer from './../../../lib/renderer/utf8.js'
 
 test('Utf8Renderer interface', function (t) {
   t.type(Utf8Renderer.render, 'function',

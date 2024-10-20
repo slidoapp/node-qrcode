@@ -1,5 +1,5 @@
 import { test } from 'tap'
-const Utils = require('renderer/utils')
+import * as Utils from './../../../lib/renderer/utils.js'
 
 test('Utils getOptions', function (t) {
   const defaultOptions = {
