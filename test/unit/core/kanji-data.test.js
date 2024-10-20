@@ -1,9 +1,11 @@
 import { test } from 'tap'
-const BitBuffer = require('core/bit-buffer')
-const KanjiData = require('core/kanji-data')
-const Mode = require('core/mode')
-const toSJIS = require('helper/to-sjis')
-require('core/utils').setToSJISFunction(toSJIS)
+import BitBuffer from './../../../lib/core/bit-buffer.js'
+import KanjiData from './../../../lib/core/kanji-data.js'
+import * as Mode from './../../../lib/core/mode.js'
+import * as Utils from './../../../lib/core/utils.js'
+import { toSJIS } from './../../../helper/to-sjis.js'
+
+Utils.setToSJISFunction(toSJIS)
 
 test('Kanji Data', function (t) {
   const data = '漢字漾癶'

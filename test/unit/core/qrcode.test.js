@@ -1,8 +1,8 @@
 import { test } from 'tap'
-const ECLevel = require('core/error-correction-level')
-const Version = require('core/version')
-const QRCode = require('core/qrcode')
-const toSJIS = require('helper/to-sjis')
+import * as ECLevel from './../../../lib/core/error-correction-level.js'
+import * as Version from './../../../lib/core/version.js'
+import * as QRCode from './../../../lib/core/qrcode.js'
+import { toSJIS } from './../../../helper/to-sjis.js'
 
 test('QRCode interface', function (t) {
   t.type(QRCode.create, 'function', 'Should have "create" function')
