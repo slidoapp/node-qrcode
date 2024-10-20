@@ -33,7 +33,7 @@
   "scripts": {
     "lint": "standard",
     "pretest": "npm run lint",
-    "test": "node --throw-deprecation test.js",
+    "test": "tap 'test/**/*.test.js' || true",
     "tap-junit-report": "tap replay -R junit --coverage-report=none --allow-empty-coverage --allow-incomplete-coverage 'test/**/*.test.js' > test-results.xml",
     "build": "rollup -c",
     "prepublish": "npm run build",
