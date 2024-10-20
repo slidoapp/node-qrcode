@@ -1,8 +1,8 @@
 import { test } from 'tap'
-const QRCode = require('lib')
-const QRCodeBrowser = require('lib/browser')
-const { createCanvas } = require('canvas')
-const Helpers = require('test/helpers')
+import * as QRCode from '../../lib/index.js'
+import * as QRCodeBrowser from '../../lib/browser.js'
+import { createCanvas } from 'canvas'
+import * as Helpers from '../helpers.js'
 
 test('toDataURL - no promise available', function (t) {
   Helpers.removeNativePromise()
