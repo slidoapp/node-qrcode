@@ -1,7 +1,7 @@
 import { test } from 'tap'
-const sinon = require('sinon')
-const QRCode = require('lib')
-const StreamMock = require('../mocks/writable-stream')
+import sinon from 'sinon'
+import * as QRCode from './../../lib/index.js'
+import StreamMock from './../mocks/writable-stream.js'
 
 test('toFileStream png', function (t) {
   t.throws(function () { QRCode.toFileStream('some text') },
