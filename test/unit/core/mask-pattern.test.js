@@ -1,6 +1,6 @@
 import { test } from 'tap'
-const BitMatrix = require('core/bit-matrix')
-const MaskPattern = require('core/mask-pattern')
+import BitMatrix from './../../../lib/core/bit-matrix.js'
+import * as MaskPattern from './../../../lib/core/mask-pattern.js'
 
 test('Mask pattern - Pattern references', function (t) {
   const patternsCount = Object.keys(MaskPattern.Patterns).length

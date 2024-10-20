@@ -1,5 +1,5 @@
 import { test } from 'tap'
-const ECLevel = require('core/error-correction-level')
+import * as ECLevel from './../../../lib/core/error-correction-level.js'
 
 const EC_LEVELS = [ECLevel.L, ECLevel.M, ECLevel.Q, ECLevel.H]
 

@@ -1,5 +1,5 @@
 import { test } from 'tap'
-const Mode = require('core/mode')
+import * as Mode from './../../../lib/core/mode.js'
 
 test('Mode bits', function (t) {
   const EXPECTED_BITS = {

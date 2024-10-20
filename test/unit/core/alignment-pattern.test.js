@@ -1,5 +1,5 @@
 import { test } from 'tap'
-const pattern = require('core/alignment-pattern')
+import * as pattern from './../../../lib/core/alignment-pattern.js'
 
 /**
  * Row/column coordinates of the center module of each alignment pattern.

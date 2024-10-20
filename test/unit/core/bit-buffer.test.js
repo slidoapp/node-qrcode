@@ -1,5 +1,5 @@
 import { test } from 'tap'
-const BitBuffer = require('core/bit-buffer')
+import BitBuffer from './../../../lib/core/bit-buffer.js'
 
 test('Bit Buffer', function (t) {
   const testData = 0x41 // 'A'

@@ -1,5 +1,5 @@
 import { test } from 'tap'
-const pattern = require('core/finder-pattern')
+import * as pattern from './../../../lib/core/finder-pattern.js'
 
 test('Finder pattern', function (t) {
   for (let i = 1; i <= 40; i++) {

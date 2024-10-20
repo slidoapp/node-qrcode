@@ -1,5 +1,5 @@
 import { test } from 'tap'
-const Poly = require('core/polynomial')
+import * as Poly from './../../../lib/core/polynomial.js'
 
 test('Generator polynomial', function (t) {
   const result = Poly.generateECPolynomial(0)
