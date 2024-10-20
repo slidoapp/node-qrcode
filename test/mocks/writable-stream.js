@@ -2,9 +2,9 @@
 // Copyright 2024 Cisco Systems, Inc.
 // Licensed under MIT-style license (see LICENSE.txt file).
 
-const stream = require('stream')
+import { Writable } from 'stream'
 
-module.exports = class WritableStream extends stream.Writable {
+export default class WritableStream extends Writable {
   constructor () {
     super()
     this.forceError = false
