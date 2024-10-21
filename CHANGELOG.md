@@ -1,3 +1,8 @@
+## 2.1.0
+
+* Add new `canvas.renderToBlob()` function to create `Blob` data from QR Code <https://github.com/slidoapp/node-qrcode/issues/13>
+
+
 ## 2.0.2
 
 * Fixed source code files line endings to use `LF` <https://github.com/slidoapp/node-qrcode/pull/17>
