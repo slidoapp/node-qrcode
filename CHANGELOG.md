@@ -1,3 +1,9 @@
+## 2.0.2
+
+* Fixed source code files line endings to use `LF` <https://github.com/slidoapp/node-qrcode/pull/17>
+* Removed the executable permissions for source code files <https://github.com/slidoapp/node-qrcode/pull/18>
+
+
 ## 2.0.1
 
 Add TypeScript type definitions for the library.
