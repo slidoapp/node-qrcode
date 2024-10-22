@@ -1,7 +1,7 @@
 {
   "name": "@slidoapp/qrcode",
   "description": "Generate Quick Response (QR) codes using JavaScript in a browser, server side code, or using a command line tool.",
-  "version": "2.1.0",
+  "version": "3.0.0-alpha.0",
   "author": "Ryan Day <soldair@gmail.com>",
   "contributors": [
     "Vincenzo Greco <greco.vincenzo@gmail.com>",
