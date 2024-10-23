@@ -1,3 +1,8 @@
+## 3.0.0-alpha.1
+
+* Refactor code to use ESM modules <https://github.com/slidoapp/node-qrcode/pull/22>
+
+
 ## 2.1.0
 
 * Add new `canvas.renderToBlob()` function to create `Blob` data from QR Code <https://github.com/slidoapp/node-qrcode/issues/13>
