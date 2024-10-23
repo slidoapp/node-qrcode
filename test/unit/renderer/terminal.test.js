@@ -1,6 +1,6 @@
-const test = require('tap').test
-const QRCode = require('core/qrcode')
-const TerminalRenderer = require('renderer/terminal')
+import { test } from 'tap'
+import * as QRCode from './../../../lib/core/qrcode.js'
+import * as TerminalRenderer from './../../../lib/renderer/terminal.js'
 
 test('TerminalRenderer interface', function (t) {
   t.type(TerminalRenderer.render, 'function',

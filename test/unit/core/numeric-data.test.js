@@ -1,7 +1,7 @@
-const test = require('tap').test
-const BitBuffer = require('core/bit-buffer')
-const NumericData = require('core/numeric-data')
-const Mode = require('core/mode')
+import { test } from 'tap'
+import BitBuffer from './../../../lib/core/bit-buffer.js'
+import NumericData from './../../../lib/core/numeric-data.js'
+import * as Mode from './../../../lib/core/mode.js'
 
 const testData = [
   {

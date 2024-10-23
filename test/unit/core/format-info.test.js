@@ -1,7 +1,7 @@
-const test = require('tap').test
-const FormatInfo = require('core/format-info')
-const ECLevel = require('core/error-correction-level')
-const MaskPattern = require('core/mask-pattern')
+import { test } from 'tap'
+import * as FormatInfo from './../../../lib/core/format-info.js'
+import * as ECLevel from './../../../lib/core/error-correction-level.js'
+import * as MaskPattern from './../../../lib/core/mask-pattern.js'
 
 const EXPECTED_FORMAT_BITS = [
   [0x77c4, 0x72f3, 0x7daa, 0x789d, 0x662f, 0x6318, 0x6c41, 0x6976],

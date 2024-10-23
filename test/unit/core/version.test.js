@@ -1,12 +1,12 @@
-const test = require('tap').test
-const Version = require('core/version')
-const VersionCheck = require('core/version-check')
-const ECLevel = require('core/error-correction-level')
-const Mode = require('core/mode')
-const NumericData = require('core/numeric-data')
-const AlphanumericData = require('core/alphanumeric-data')
-const KanjiData = require('core/kanji-data')
-const ByteData = require('core/byte-data')
+import { test } from 'tap'
+import * as Version from './../../../lib/core/version.js'
+import * as VersionCheck from './../../../lib/core/version-check.js'
+import * as ECLevel from './../../../lib/core/error-correction-level.js'
+import * as Mode from './../../../lib/core/mode.js'
+import NumericData from './../../../lib/core/numeric-data.js'
+import AlphanumericData from './../../../lib/core/alphanumeric-data.js'
+import KanjiData from './../../../lib/core/kanji-data.js'
+import ByteData from './../../../lib/core/byte-data.js'
 
 const EC_LEVELS = [ECLevel.L, ECLevel.M, ECLevel.Q, ECLevel.H]
 

@@ -1,5 +1,5 @@
-const test = require('tap').test
-const Regex = require('core/regex')
+import { test } from 'tap'
+import * as Regex from './../../../lib/core/regex.js'
 
 test('Regex', function (t) {
   t.ok(Regex.NUMERIC instanceof RegExp,

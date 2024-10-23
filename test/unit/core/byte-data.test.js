@@ -1,7 +1,7 @@
-const test = require('tap').test
-const BitBuffer = require('core/bit-buffer')
-const ByteData = require('core/byte-data')
-const Mode = require('core/mode')
+import { test } from 'tap'
+import BitBuffer from './../../../lib/core/bit-buffer.js'
+import ByteData from './../../../lib/core/byte-data.js'
+import * as Mode from './../../../lib/core/mode.js'
 
 test('Byte Data: String Input', function (t) {
   const text = '1234'
